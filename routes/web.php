@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+// Route handling user entry aswell as going to the homepage
+Route::get('/', 'PostsController@index');
+Route::resource('/posts', 'PostsController');
